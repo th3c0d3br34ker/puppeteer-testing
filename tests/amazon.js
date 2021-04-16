@@ -16,7 +16,7 @@ before(async () => {
   browser = await puppeteer.launch(launchOptions);
 });
 
-describe('Amazon Homepage', () => {
+describe('Check Amazon Homepage', () => {
   it('has search input', async function () {
     this.timeout(0);
     page = await browser.newPage();

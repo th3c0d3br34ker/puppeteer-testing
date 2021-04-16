@@ -1,6 +1,13 @@
 const assert = require('assert');
+const path = require('path');
 const puppeteer = require('puppeteer');
-const { launchOptions, GOOGLE_URL } = require('../utils/constants');
+const {
+  launchOptions,
+  GOOGLE_URL,
+  SCREENSHOTS_PATH,
+} = require('../utils/constants');
+
+const gmail_screenshot = path.join(SCREENSHOTS_PATH, 'gmail.png');
 
 let browser;
 let page;
@@ -18,6 +25,7 @@ describe('Check Gmail signup', () => {
       waitUntil: 'networkidle0',
     });
     const SignUpButton = await page.$('a.hero-carousel__cta--reg');
+    await page.screenshot({ path: gmail_screenshot });
     await page.close();
     assert.ok(SignUpButton);
   });

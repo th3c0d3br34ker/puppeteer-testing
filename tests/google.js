@@ -1,6 +1,13 @@
 const assert = require('assert');
+const path = require('path');
 const puppeteer = require('puppeteer');
-const { launchOptions, GOOGLE_URL } = require('../utils/constants');
+const {
+  launchOptions,
+  GOOGLE_URL,
+  SCREENSHOTS_PATH,
+} = require('../utils/constants');
+
+const google_screenshot = path.join(SCREENSHOTS_PATH, 'google.png');
 
 let browser;
 let page;
@@ -15,6 +22,7 @@ describe('Check Google Homepage', () => {
     page = await browser.newPage();
     await page.goto(GOOGLE_URL, { waitUntil: 'networkidle0' });
     const title = await page.title();
+    await page.screenshot({ path: google_screenshot });
     await page.close();
     assert.strictEqual(title, 'Google');
   });
