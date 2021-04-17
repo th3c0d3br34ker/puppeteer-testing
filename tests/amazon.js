@@ -20,7 +20,6 @@ describe('Check Amazon Homepage', () => {
   it('has search input', async function () {
     this.timeout(0);
     page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 800 });
     await page.goto(AMAZON_URL, { waitUntil: 'networkidle0' });
     const searchInput = await page.$('#twotabsearchtextbox');
     await page.screenshot({ path: amazon_screenshot });
@@ -32,7 +31,6 @@ describe('Check Amazon Homepage', () => {
   it('has title', async function () {
     this.timeout(0);
     page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 800 });
     await page.goto(AMAZON_URL, { waitUntil: 'networkidle0' });
     const pageTitle = await page.title();
     await page.close();

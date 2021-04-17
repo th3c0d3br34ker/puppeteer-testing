@@ -20,7 +20,6 @@ describe('Check Gmail signup', () => {
   it('Landing page has CTA button', async function () {
     this.timeout(0);
     page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 800 });
     await page.goto(`${GOOGLE_URL}gmail/about/`, {
       waitUntil: 'networkidle0',
     });
