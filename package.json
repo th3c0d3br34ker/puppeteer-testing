@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "npx mocha ./tests/"
+    "test": "npx mocha ./tests/",
+    "test:report": "npx mocha -R spec ./tests/ 2>&1 | tee report.txt"
   },
   "author": "",
   "license": "ISC",
