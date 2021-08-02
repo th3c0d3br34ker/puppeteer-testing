@@ -20,7 +20,7 @@ describe('Check Amazon Homepage', () => {
   it('has search input', async function () {
     this.timeout(0);
     page = await browser.newPage();
-    await page.goto(AMAZON_URL, { waitUntil: 'networkidle0' });
+    await page.goto(AMAZON_URL, { waitUntil: 'networkidle2' });
     const searchInput = await page.$('#twotabsearchtextbox');
     await page.screenshot({ path: amazon_screenshot });
     await page.close();

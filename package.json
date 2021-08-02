@@ -8,7 +8,7 @@
     "test": "npx mocha ./tests/",
     "test:report": "npx mocha -R spec ./tests/ 2>&1 | tee report.txt"
   },
-  "author": "",
+  "author": "th3c0d3br34ker",
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^8.0.0"

@@ -28,7 +28,7 @@ describe('Check Instagram login', () => {
 
     await page.type("[name='username']", INSTAGRAM_USERNAME);
     await page.keyboard.down('Tab');
-    await page.keyboard.type('qYGxFfzx@2YJ3+K');
+    await page.keyboard.type('pass'); // password
 
     await page.evaluate(() => {
       const btns = [

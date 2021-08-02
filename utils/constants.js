@@ -10,7 +10,7 @@ const INSTAGRAM_USERNAME = 'some.random.name___';
 const SCREENSHOTS_PATH = path.join(__dirname, path.normalize('../screenshots'));
 
 const launchOptions = {
-  headless: true,
+  headless: false,
   defaultViewport: {
     width: 1280,
     height: 800,
