@@ -1,9 +1,9 @@
-const title = require('./test/title');
+const fs = require('fs');
 
-try {
-  (async () => {
-    await title();
-  })();
-} catch (err) {
-  console.error(err);
-}
+const makeDir = async () => {
+  if (!(await fs.existsSync('screenshots'))) {
+    await fs.mkdirSync('screenshots');
+  }
+};
+
+makeDir();

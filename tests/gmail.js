@@ -23,7 +23,7 @@ describe('Check Gmail signup', () => {
     await page.goto(`${GOOGLE_URL}gmail/about/`, {
       waitUntil: 'networkidle0',
     });
-    const SignUpButton = await page.$('a.hero-carousel__cta--reg');
+    const SignUpButton = await page.$('a.button--mobile-after-hero-only');
     await page.screenshot({ path: gmail_screenshot });
     await page.close();
     assert.ok(SignUpButton);

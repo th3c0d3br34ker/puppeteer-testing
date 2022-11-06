@@ -32,7 +32,7 @@ describe('Check Instagram login', () => {
 
     await page.evaluate(() => {
       const btns = [
-        ...document.querySelector('.HmktE').querySelectorAll('button'),
+        ...document.querySelector('#loginForm').querySelectorAll('button'),
       ];
       btns.forEach(function (btn) {
         if (btn.innerText === 'Log In') {
